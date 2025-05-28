@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+st.set_page_config(page_title="Cadastro de Artistas", layout="centered")
 
 # Título do site
 st.title("StageUp")
