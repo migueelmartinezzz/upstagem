@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-
-# ✅ Este comando deve ser o primeiro do Streamlit
 st.set_page_config(page_title="Cadastro de Artistas", layout="centered")
 
 # Título e descrição
