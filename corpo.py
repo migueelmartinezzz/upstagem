@@ -17,7 +17,7 @@ with col1:
 with col2:
     if st.button("📋 Sou Contratante"):
         st.switch_page("pages/1_Contratante.py")
-🧑‍💼 pages/1_Contratante.py (Página para contratantes)
+pages/1_Contratante.py (Página para contratantes)
 python
 Copiar
 Editar
