@@ -1,24 +1,38 @@
 import streamlit as st
-import pandas as pd
-st.set_page_config(page_title="Cadastro de Artistas", layout="centered")
 
-# Título e descrição
-st.title("StageUp")
-st.subheader("Conectando artistas independentes com oportunidades")
-st.write("Cadastre-se para mostrar seu talento e ser contratado para eventos!")
+st.set_page_config(page_title="StageUp", layout="centered")
 
-# Formulário de cadastro
-with st.form(key="form_artista"):
-    nome = st.text_input("Nome artístico")
-    estilo = st.text_input("Estilo musical ou artístico (ex: MPB, dança contemporânea)")
-    local = st.text_input("Cidade e estado onde atua")
-    valor = st.text_input("Valor aproximado para eventos (ex: R$300, R$1000...)")
-    descricao = st.text_area("Descrição sobre você, sua arte, seus diferenciais")
-    imagem = st.file_uploader("Foto de divulgação", type=["jpg", "jpeg", "png"])
-    enviar = st.form_submit_button("Cadastrar")
+st.title("🎭 StageUp")
+st.subheader("Conectando artistas independentes com oportunidades ✨")
 
-# Mensagem de sucesso
-if enviar:
-    st.success(f"Artista {nome} cadastrado com sucesso! 🎉")
-    if imagem:
-        st.image(imagem, caption=f"{nome}", use_column_width=True)
+st.write("Seja bem-vindo à plataforma que valoriza talentos e conecta artistas com eventos em todo o Brasil.")
+st.write("Escolha seu caminho abaixo:")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("🎤 Sou Artista"):
+        st.switch_page("pages/2_Artista.py")
+
+with col2:
+    if st.button("📋 Sou Contratante"):
+        st.switch_page("pages/1_Contratante.py")
+🧑‍💼 pages/1_Contratante.py (Página para contratantes)
+python
+Copiar
+Editar
+import streamlit as st
+
+st.set_page_config(page_title="Contratar Artistas", layout="centered")
+
+st.sidebar.title("📌 Menu")
+st.sidebar.page_link("app.py", label="🔙 Página Inicial")
+st.sidebar.markdown("Pesquise artistas com base no estilo e região.")
+
+st.title("🔍 Buscar Artistas")
+
+estilo = st.text_input("Qual estilo artístico você procura? (ex: samba, dança, stand-up...)")
+local = st.text_input("Qual região? (ex: Rio de Janeiro, SP...)")
+
+if st.button("🔎 Buscar"):
+    st.info("Aqui apareceriam os artistas compatíveis com a busca. (função a ser implementada)")
