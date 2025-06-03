@@ -1,9 +1,7 @@
 import streamlit as st
 
-# Configuração da página
 st.set_page_config(page_title="StageUp", layout="centered")
 
-# Estilo customizado (fontes, cores, layout)
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
